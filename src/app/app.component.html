@@ -1,5 +1,47 @@
 <div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
+  <div class="font-bold text-3xl mb-4">
     Fyle Internship Challenge
+  </div>
+  
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" placeholder="Enter GitHub username" [(ngModel)]="username" class="search-input">
+    <button (click)="searchRepositories()" class="search-button">Search</button>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="loading" class="loading-indicator">Loading...</div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="error text-red-600">{{ error }}</div>
+
+  <!-- User Profile Section -->
+  <div *ngIf="userProfile" class="user-profile">
+    <img [src]="userProfile.avatar_url" alt="Profile Image" class="profile-image">
+    <div class="user-info">
+      <p class="user-name">{{ userProfile.name }}</p>
+      <p class="user-bio">{{ userProfile.bio }}</p>
+      <p class="user-location">{{ userProfile.location }}</p>
+      <div class="user-links">
+        <a [href]="userProfile.html_url" target="_blank">View Profile</a>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Repository Display -->
+<div *ngIf="repositoriesToShow.length > 0" class="repository-list">
+  <div class="grid-container">
+    <div *ngFor="let repo of repositoriesToShow" class="repository-box">
+      <p class="repo-name">{{ repo.name }}</p> 
+       <p class="repo-description">{{ repo.description }}</p>
+    </div>
+  </div>
+  
+  <!-- Pagination Controls -->
+  <div class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="currentPage === 1" class="search-button mr-2">Previous</button>
+    <span class="text-gray-600">Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="search-button ml-2">Next</button>
   </div>
 </div>

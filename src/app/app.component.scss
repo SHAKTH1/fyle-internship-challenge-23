@@ -1,0 +1,214 @@
+/* Grid layout and basic styles */
+.grid {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* Light gray background */
+  }
+  
+  /* Title */
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center; /* Center-align the title */
+  }
+  
+  /* Search bar container */
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+    /* Center the search bar horizontally */
+  }
+  
+  /* Search input */
+  .search-input {
+    flex: 1;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  /* Search button */
+  .search-button {
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .search-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Loading indicator */
+  .loading {
+    margin-top: 1rem;
+    color: #888;
+    text-align: center; /* Center-align the loading message */
+  }
+  
+  /* Error message */
+  .error {
+    margin-top: 1rem;
+    color: #f44336;
+    text-align: center; /* Center-align the error message */
+  }
+  
+  /* User profile section */
+  .user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #fff; /* White background for profile section */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for profile section */
+  }
+/* Repository list section */
+.repository-list {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Grid container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width as needed */
+    grid-gap: 1rem; /* Add gap between grid items */
+  }
+  
+  /* Repository box styles */
+  .repository-box {
+    padding: 1rem; /* Add padding to the repository boxes */
+    border: 1px solid #ccc; /* Add border to the repository boxes */
+    border-radius: 4px; /* Add border radius to the repository boxes */
+    background-color: #fff; /* White background for repository boxes */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for repository boxes */
+  }
+  
+  .repo-name {
+    font-size: 1.1rem; /* Increase font size for repository names */
+    font-weight: bold; /* Bold font weight for repository names */
+  }
+  
+  .repo-description {
+    font-size: 0.9rem; /* Decrease font size for repository descriptions */
+    color: #666; /* Light gray color for repository descriptions */
+  }
+  
+  
+  
+  .user-profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1rem; /* Add margin between image and profile info */
+  }
+  
+  .user-info {
+    flex: 1; /* Allow profile info to fill remaining space */
+  }
+  
+  .user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-bio {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .user-location {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  
+  .user-links {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
+  .user-links a {
+    margin-right: 1rem;
+    color: #4caf50;
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .user-links a:hover {
+    opacity: 0.8; /* Slight opacity change on hover for links */
+  }
+  
+  /* Repository list section */
+  .repository-list {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow*/
+         }  
+         .pagination-controls {
+            display: flex;
+            justify-content: space-between; /* Distribute elements evenly */
+            align-items: center;
+            margin-top: 1rem;
+          }
+          
+          .pagination-controls button {
+            padding: 0.5rem 1rem;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+          }
+          
+          .pagination-controls button:hover {
+            background-color: #45a049;
+          }
+          
+          .pagination-controls button[disabled] {
+            opacity: 0.5;
+            cursor: default; /* Disable button interaction visually */
+          }
+          
+          .pagination-controls span {
+            font-size: 0.9rem;
+            color: #888;
+          }
+          .loading-indicator {
+            display: none; /* Initially hide the loading indicator */
+            position: absolute; /* Position the indicator on top of other elements */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the indicator */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f3f3f3; /* Light gray background */
+            animation: spin 1s linear infinite; /* Add the spin animation */
+          }
+          
