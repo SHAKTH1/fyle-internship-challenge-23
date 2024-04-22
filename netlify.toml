@@ -1,4 +1,9 @@
+[build]
+  command = "ng build --prod"
+  publish = "dist/fyleshakthi"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
